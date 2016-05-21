@@ -192,8 +192,8 @@ div#notebook {
 <li><a href="https://fr.wikipedia.org/wiki/Loi_de_Weibull">Loi de Weibull</a></li>
 <li><a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_l%27entropie_crois%C3%A9e">Méthode de l'entropie croisée</a></li>
 </ul>
-<p><strong>Note</strong> : on a remarqué que <a href="http://www.maths.uq.edu.au/~kroese/ps/dpr_ms.pdf">ce papier</a> correspond au problème de la question 2, avec une approche un peu plus générale.</p>
-<h2 id="Approche-du-sujet-et-m&#233;thode">Approche du sujet et m&#233;thode<a class="anchor-link" href="#Approche-du-sujet-et-m&#233;thode">&#182;</a></h2><p>La file d'attente de la première partie du sujet est du type classique <strong>M/M/1</strong> (décrit <a href="https://en.wikipedia.org/wiki/M/M/1_queue">ici</a>), on supposera également ici que les clients sont traités un à un suivant la règle du <em>First In First Out</em>.</p>
+<p><strong>Note</strong> : on a remarqué que <a href="http://www.maths.uq.edu.au/~kroese/ps/dpr_ms.pdf">ce papier</a> correspond au problème de la question 2, avec une approche un peu plus générale. De plus, <a href="http://www.maths.uq.edu.au/~kroese/ps/aortut.pdf">celui-ci</a> offre quelques exemples d'application de la méthode <em>CE</em>.</p>
+<h2 id="Approche-du-sujet-et-m&#233;thode">Approche du sujet et m&#233;thode<a class="anchor-link" href="#Approche-du-sujet-et-m&#233;thode">&#182;</a></h2><p>La file d'attente de la première partie du sujet est du type classique <strong>M/M/1</strong> (décrit <a href="http://www.win.tue.nl/~iadan/que/h4.pdf">ici</a>), on supposera également ici que les clients sont traités un à un suivant la règle du <em>First In First Out</em>.</p>
 <p>Une représentation markovienne du processus est la suivante (en prenant pour lambda <code>lambda_1</code> et pour mu <code>lambda_2</code>) :
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/MM1_queue_state_space.svg" alt="MM1_queue_state_space"></p>
 <p>La <em>loi de Little</em> nous donne le nombre moyen de clients dans notre file en régime stationnaire, à condition qu'elle soit stable. Sachant que l'espérance d'une exponentielle est l'inverse de son paramètre, le nombre moyen de clients  en régime stationnaire est alors dans notre cas <code>lambda_1</code>/<code>lambda_2</code>.</p>
@@ -367,7 +367,7 @@ Pour tirer selon les lois exponentielles ou de Weibull, on utilisera le module <
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Maintenant que notre estimateur de Monte Carlo est construit, on va chercher à étudier comment il réagit aux différents paramètres. La définition d'une trajectoire temporelle nous permet de ne lancer <code>queue_exp</code> qu'une fois pour tester plusieurs valeurs de <code>n</code>.</p>
+<p>Maintenant que notre estimateur de Monte Carlo est construit, on va chercher à étudier comment il réagit aux différents paramètres. La définition d'une trajectoire temporelle nous permet de ne lancer <code>queue_exp</code> qu'une fois pour tester plusieurs valeurs de <code>n</code> et <code>t</code>.</p>
 
 </div>
 </div>
@@ -394,6 +394,7 @@ Pour tirer selon les lois exponentielles ou de Weibull, on utilisera le module <
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="M&#233;thode-de-l'entropie-crois&#233;e">M&#233;thode de l'entropie crois&#233;e<a class="anchor-link" href="#M&#233;thode-de-l'entropie-crois&#233;e">&#182;</a></h3><p>Dans certains cas de paramètres (<em><strong>A préciser grâce aux résultats plus haut</strong></em>), la probabilité à estimer est très faible, l'évènement est très rare. Il s'agit alors d'utiliser la méthode CE pour estimer correctement cette probabilité.</p>
+<p>Une approche mathématique du problème a été réalisée et est lisible <a href="http://naascraft.github.io/SMC/demo.pdf">ici</a>.</p>
 
 </div>
 </div>
